@@ -1,6 +1,7 @@
 import moment from "moment";
 import React from "react";
 import "./Card.css";
+import { FavoriteIcon } from "./FavoriteIcon/FavoriteIcon";
 
 export const Card = ({ data }) => {
   const renderDay = () => {
@@ -14,6 +15,8 @@ export const Card = ({ data }) => {
       <div className="cardDay">
         <span className="cardDayText"> {renderDay()} </span>
       </div>
+      <FavoriteIcon />
+      <h1 className="cardName"> {data.name} </h1>
     </div>
   );
 };

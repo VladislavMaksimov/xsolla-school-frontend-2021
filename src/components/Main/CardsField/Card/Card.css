@@ -21,3 +21,10 @@
   line-height: var(--line-height-large);
   color: var(--color-card-text);
 }
+
+.cardName {
+  position: absolute;
+  bottom: 4.2rem;
+  left: 4rem;
+  color: #ffffff;
+}
