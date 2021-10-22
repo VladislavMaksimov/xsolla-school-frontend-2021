@@ -1,0 +1,7 @@
+.filters *:not(:nth-last-child(1)) {
+  margin-right: 2rem;
+}
+
+.filter {
+  padding: 0.9rem 2.2rem 0.8rem 2.2rem;
+}

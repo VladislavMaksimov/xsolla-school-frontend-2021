@@ -13,6 +13,7 @@
   --line-height-small: 3.3rem;
 
   --border-radius-large: 1.6rem;
+  --border-radius-small: 0.6rem;
 }
 
 html {
@@ -38,7 +39,8 @@ h1 {
 p,
 span,
 label,
-input {
+select,
+option {
   font-family: var(--font-family-avenir);
   font-style: normal;
   font-weight: 500;
@@ -47,10 +49,23 @@ input {
   color: var(--color-regular-text);
 }
 
+select {
+  border: 1px solid #444444;
+  border-radius: var(--border-radius-small);
+}
+
 #container {
   margin: 8rem;
   padding: 10rem 10rem 8rem 10rem;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
   border-radius: var(--border-radius-large);
   background-color: var(--color-container);
+}
+
+#container:nth-child(1) {
+  margin-bottom: 4rem;
+}
+
+#container:nth-child(2) {
+  margin-bottom: 4.2rem;
 }
