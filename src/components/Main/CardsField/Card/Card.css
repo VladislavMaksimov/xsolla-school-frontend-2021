@@ -1,5 +1,23 @@
 .card {
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: var(--border-radius-small);
+}
+
+.cardDay {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  border: 2px solid #ffffff;
+  border-radius: var(--border-radius-small);
+  padding: 0.9rem 1.3rem 0.5rem 1.3rem;
+}
+
+.cardDayText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-large);
+  color: var(--color-card-text);
 }

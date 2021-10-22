@@ -6,8 +6,10 @@ export const CardsField = ({ cards }) => {
   const renderCards = () => {
     if (!cards) return;
     const cardItems = [];
+    console.log(cards)
     cards.forEach((card) => {
-      cardItems.push(<Card data={card} />);
+        console.log(card)
+      cardItems.push(<Card key={card.id} data={card} />);
     });
     return cardItems;
   };
