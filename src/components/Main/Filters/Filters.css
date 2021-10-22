@@ -3,5 +3,19 @@
 }
 
 .filter {
-  padding: 0.9rem 2.2rem 0.8rem 2.2rem;
+  position: relative;
+  padding: 0.9rem 5.1rem 0.8rem 2.2rem;
+
+  /* remove arrow icon */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* set custom arrow icon */
+  background-image: url("./filter.svg");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 1.4rem);
+  background-position-y: 50%;
+
+  cursor: pointer;
 }
