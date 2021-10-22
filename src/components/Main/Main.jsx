@@ -1,5 +1,5 @@
 import moment from "moment";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { CardsField } from "./CardsField/CardsField";
 import { Filters } from "./Filters/Filters";
 
@@ -22,6 +22,7 @@ export const Main = () => {
   const [data, setData] = useState(null);
   const [chosenCity, setChosenCity] = useState(null);
   const [chosenMonth, setChosenMonth] = useState(null);
+  const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
     getData();
@@ -39,26 +40,31 @@ export const Main = () => {
         setData(json);
         setChosenCity("All");
         setChosenMonth("All");
-      });
+      })
+      .then(() => setFetching(false));
   };
 
-  return (
-    <main>
-      <Filters
-        data={data}
-        chosenCity={chosenCity}
-        setChosenCity={setChosenCity}
-        chosenMonth={chosenMonth}
-        setChosenMonth={setChosenMonth}
-        getMonthFromDate={getMonthFromDate}
-      />
+  const renderFetchingData = () => {
+    if (!fetching)
+      return (
+        <Fragment>
+          <Filters
+            data={data}
+            chosenCity={chosenCity}
+            setChosenCity={setChosenCity}
+            chosenMonth={chosenMonth}
+            setChosenMonth={setChosenMonth}
+            getMonthFromDate={getMonthFromDate}
+          />
+          <CardsField
+            cards={data}
+            chosenCity={chosenCity}
+            chosenMonth={chosenMonth}
+            getMonthFromDate={getMonthFromDate}
+          />
+        </Fragment>
+      );
+  };
 
-      <CardsField
-        cards={data}
-        chosenCity={chosenCity}
-        chosenMonth={chosenMonth}
-        getMonthFromDate={getMonthFromDate}
-      />
-    </main>
-  );
+  return <main>{renderFetchingData()}</main>;
 };
