@@ -1,9 +1,18 @@
 :root {
-  --font-family: "Avenir", Arial, Helvetica, sans-serif;
+  --color-body: #f0f3ff;
+  --color-container: #ffffff;
+  --color-heading: #2e282c;
+  --color-regular-text: #2e282c;
+
+  --font-family-avenir: "Avenir", Arial, Helvetica, sans-serif;
 
   --font-size-large: 4.8rem;
+  --font-size-small: 2.4rem;
 
   --line-height-large: 6.6rem;
+  --line-height-small: 3.3rem;
+
+  --border-radius-large: 1.6rem;
 }
 
 html {
@@ -14,7 +23,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: var(--font-family-avenir);
+  background-color: var(--color-body);
 }
 
 h1 {
@@ -22,5 +32,25 @@ h1 {
   font-weight: 900;
   font-size: var(--font-size-large);
   line-height: var(--line-height-large);
-  color: #2e282c;
+  color: var(--color-heading);
+}
+
+p,
+span,
+label,
+input {
+  font-family: var(--font-family-avenir);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  color: var(--color-regular-text);
+}
+
+#container {
+  margin: 8rem;
+  padding: 10rem 10rem 8rem 10rem;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.12);
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-container);
 }

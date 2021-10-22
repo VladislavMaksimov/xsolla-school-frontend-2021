@@ -5,10 +5,10 @@ import { Main } from "./components/Main/Main";
 
 const App = () => {
   return (
-    <Fragment>
+    <div id="container">
       <Header />
       <Main />
-    </Fragment>
+    </div>
   );
 };
 
