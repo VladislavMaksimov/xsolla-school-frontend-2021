@@ -4,3 +4,10 @@
   font-weight: 900;
   src: url("./fonts/Avenir/AvenirLTStd-Black.otf");
 }
+
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Avenir/AvenirLTStd-Book.otf");
+}
