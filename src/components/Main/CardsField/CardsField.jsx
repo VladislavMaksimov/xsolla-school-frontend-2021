@@ -1,15 +1,24 @@
 import React from "react";
 import { Card } from "./Card/Card";
-import "./CardsField.css"
+import "./CardsField.css";
 
-export const CardsField = ({ cards }) => {
+export const CardsField = ({
+  cards,
+  chosenCity,
+  chosenMonth,
+  getMonthFromDate,
+}) => {
   const renderCards = () => {
     if (!cards) return;
     const cardItems = [];
-    console.log(cards)
     cards.forEach((card) => {
-        console.log(card)
-      cardItems.push(<Card key={card.id} data={card} />);
+      const city = card.city;
+      const month = getMonthFromDate(card.date);
+      if (
+        (chosenCity === "All" || city === chosenCity) &&
+        (chosenMonth === "All" || month === chosenMonth)
+      )
+        cardItems.push(<Card key={card.id} data={card} />);
     });
     return cardItems;
   };

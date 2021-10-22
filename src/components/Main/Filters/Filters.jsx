@@ -1,35 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Filters.css";
-import moment from "moment";
 
-export const Filters = ({ data }) => {
-  const monthsMap = {
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
-    5: "May",
-    6: "June",
-    7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December",
-  };
-
+export const Filters = ({
+  data,
+  chosenCity,
+  setChosenCity,
+  chosenMonth,
+  setChosenMonth,
+  getMonthFromDate,
+}) => {
   const [cities, setCities] = useState(null);
   const [months, setMonths] = useState(null);
 
-  const getMonthFromDate = (date) => {
-    const monthNumber = moment(date, "DD.MM.YYYY").month() + 1;
-    return monthsMap[monthNumber];
-  };
-
   useEffect(() => {
     if (!data) return;
-    const cities = new Set();
-    const months = new Set();
+    const cities = new Set(["All"]);
+    const months = new Set(["All"]);
     data.forEach((item) => {
       cities.add(item.city);
       months.add(getMonthFromDate(item.date));
@@ -50,12 +36,22 @@ export const Filters = ({ data }) => {
   return (
     <div className="filters">
       <label htmlFor="cityPicker">City:</label>
-      <select id="cityPicker" className="filter">
+      <select
+        id="cityPicker"
+        className="filter"
+        value={chosenCity}
+        onChange={(e) => setChosenCity(e.target.value)}
+      >
         {renderOptions(cities)}
       </select>
 
       <label htmlFor="monthPicker">Month:</label>
-      <select id="monthPicker" className="filter">
+      <select
+        id="monthPicker"
+        className="filter"
+        value={chosenMonth}
+        onChange={(e) => setChosenMonth(e.target.value)}
+      >
         {renderOptions(months)}
       </select>
     </div>
