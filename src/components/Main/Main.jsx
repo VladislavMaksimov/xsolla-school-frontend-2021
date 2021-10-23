@@ -22,6 +22,7 @@ export const Main = () => {
   const [data, setData] = useState(null);
   const [chosenCity, setChosenCity] = useState(null);
   const [chosenMonth, setChosenMonth] = useState(null);
+  const [isOnlyFavorites, setIsOnlyFavorites] = useState(false);
   const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
@@ -54,12 +55,15 @@ export const Main = () => {
             setChosenCity={setChosenCity}
             chosenMonth={chosenMonth}
             setChosenMonth={setChosenMonth}
+            isOnlyFavorites={isOnlyFavorites}
+            setIsOnlyFavorites={setIsOnlyFavorites}
             getMonthFromDate={getMonthFromDate}
           />
           <CardsField
             cards={data}
             chosenCity={chosenCity}
             chosenMonth={chosenMonth}
+            isOnlyFavorites={isOnlyFavorites}
             getMonthFromDate={getMonthFromDate}
           />
         </Fragment>

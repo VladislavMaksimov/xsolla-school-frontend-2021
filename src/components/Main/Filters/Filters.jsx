@@ -7,6 +7,8 @@ export const Filters = ({
   setChosenCity,
   chosenMonth,
   setChosenMonth,
+  isOnlyFavorites,
+  setIsOnlyFavorites,
   getMonthFromDate,
 }) => {
   const [cities, setCities] = useState(null);
@@ -35,9 +37,9 @@ export const Filters = ({
 
   return (
     <div className="filters">
-      <label htmlFor="cityPicker">City:</label>
+      <label htmlFor="cityFilter">City:</label>
       <select
-        id="cityPicker"
+        id="cityFilter"
         className="filter"
         value={chosenCity}
         onChange={(e) => setChosenCity(e.target.value)}
@@ -45,15 +47,28 @@ export const Filters = ({
         {renderOptions(cities)}
       </select>
 
-      <label htmlFor="monthPicker">Month:</label>
+      <label htmlFor="monthFilter">Month:</label>
       <select
-        id="monthPicker"
+        id="monthFilter"
         className="filter"
         value={chosenMonth}
         onChange={(e) => setChosenMonth(e.target.value)}
       >
         {renderOptions(months)}
       </select>
+
+      <span id="wrapper">
+        <label htmlFor="favoriteFilter">Only favorites:</label>
+        <input
+          type="checkbox"
+          id="favoriteFilter"
+          value={isOnlyFavorites}
+          onChange={(e) => {
+            const value = e.target.value === "false" ? true : false;
+            setIsOnlyFavorites(value);
+          }}
+        />
+      </span>
     </div>
   );
 };

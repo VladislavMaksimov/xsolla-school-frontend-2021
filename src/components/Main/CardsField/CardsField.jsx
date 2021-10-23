@@ -8,6 +8,7 @@ export const CardsField = ({
   chosenCity,
   chosenMonth,
   getMonthFromDate,
+  isOnlyFavorites,
 }) => {
   const getFirstFavorites = () => {
     if (!localStorage.favorites) {
@@ -40,7 +41,8 @@ export const CardsField = ({
       const month = getMonthFromDate(card.date);
       if (
         (chosenCity === "All" || city === chosenCity) &&
-        (chosenMonth === "All" || month === chosenMonth)
+        (chosenMonth === "All" || month === chosenMonth) &&
+        (!isOnlyFavorites || JSON.parse(favorites)[card.id] === true)
       )
         cardItems.push(
           <Card

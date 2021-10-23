@@ -56,6 +56,10 @@ select {
   border-radius: var(--border-radius-small);
 }
 
+input {
+  margin: 0;
+}
+
 #container {
   margin: 8rem;
   padding: 10rem 10rem 8rem 10rem;
