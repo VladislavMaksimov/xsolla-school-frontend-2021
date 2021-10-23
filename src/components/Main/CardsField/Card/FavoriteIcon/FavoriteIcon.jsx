@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import "./FavoriteIcon.css";
 
-export const FavoriteIcon = () => {
-  const [marked, setMarked] = useState(null);
-
-  const switchMarked = () => {
-    if (marked) setMarked(false);
-    else setMarked(true);
+export const FavoriteIcon = ({ returnMark, isFavorite }) => {
+  const switchMark = () => {
+    if (isFavorite) returnMark(false);
+    else returnMark(true);
   };
 
   return (
     <svg
       className="favoriteIcon"
-      onClick={switchMarked}
+      onClick={switchMark}
       width="16"
       height="20"
       viewBox="0 0 16 20"
-      fill={marked ? "#ffffff" : "none"}
+      fill={isFavorite ? "#ffffff" : "none"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
