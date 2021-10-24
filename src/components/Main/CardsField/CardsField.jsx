@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { first } from "strip-comments";
 import { Card } from "./Card/Card";
 import "./CardsField.css";
 
