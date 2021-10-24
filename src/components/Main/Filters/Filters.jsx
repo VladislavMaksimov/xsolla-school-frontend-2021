@@ -51,7 +51,7 @@ export const Filters = ({
 
   return (
     <div className="filters">
-      <div class="filterWrapper">
+      <div className="filterWrapper">
         <label htmlFor="cityFilter">City:</label>
         <select
           id="cityFilter"
@@ -63,7 +63,7 @@ export const Filters = ({
         </select>
       </div>
 
-      <div class="filterWrapper">
+      <div className="filterWrapper">
         <label htmlFor="monthFilter">Month:</label>
         <select
           id="monthFilter"
@@ -75,7 +75,7 @@ export const Filters = ({
         </select>
       </div>
 
-      <div class="filterWrapper">
+      <div className="filterWrapper">
         <label htmlFor="favoriteFilter">Only favorites:</label>
         <input
           type="checkbox"
