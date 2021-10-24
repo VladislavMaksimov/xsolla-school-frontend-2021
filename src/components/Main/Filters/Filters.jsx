@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import "./Filters.css";
 
@@ -17,13 +18,21 @@ export const Filters = ({
   useEffect(() => {
     if (!data) return;
     const cities = new Set(["All"]);
-    const months = new Set(["All"]);
+    const months = new Set();
     data.forEach((item) => {
       cities.add(item.city);
-      months.add(getMonthFromDate(item.date));
+      months.add(moment(item.date, "DD.MM.YYYY").month() + 1);
     });
+    const sortedMonthNumbers = Array.from(months);
+    sortedMonthNumbers.sort((a, b) => {
+      return a - b;
+    });
+    const sortedMonths = sortedMonthNumbers.map((monthNum) => {
+      return getMonthFromDate(monthNum);
+    });
+    sortedMonths.unshift("All");
     setCities(cities);
-    setMonths(months);
+    setMonths(sortedMonths);
   }, [data]);
 
   const renderOptions = (dataset) => {

@@ -30,6 +30,7 @@ export const Main = () => {
   }, []);
 
   const getMonthFromDate = (date) => {
+    if (typeof date === "number") return monthsMap[date];
     const monthNumber = moment(date, "DD.MM.YYYY").month() + 1;
     return monthsMap[monthNumber];
   };
