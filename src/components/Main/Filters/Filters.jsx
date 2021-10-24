@@ -15,20 +15,21 @@ export const Filters = ({
   const [cities, setCities] = useState(null);
   const [months, setMonths] = useState(null);
 
-  const sortMonths = (months) => {
-    const sortedMonthNumbers = Array.from(months);
-    sortedMonthNumbers.sort((a, b) => {
-      return a - b;
-    });
-    const sortedMonths = sortedMonthNumbers.map((monthNum) => {
-      return getMonthFromDate(monthNum);
-    });
-    sortedMonths.unshift("All");
-    return sortedMonths;
-  };
-
   useEffect(() => {
     if (!data) return;
+
+    const sortMonths = (months) => {
+      const sortedMonthNumbers = Array.from(months);
+      sortedMonthNumbers.sort((a, b) => {
+        return a - b;
+      });
+      const sortedMonths = sortedMonthNumbers.map((monthNum) => {
+        return getMonthFromDate(monthNum);
+      });
+      sortedMonths.unshift("All");
+      return sortedMonths;
+    };
+
     const cities = new Set(["All"]);
     const months = new Set();
     data.forEach((item) => {
@@ -36,6 +37,7 @@ export const Filters = ({
       months.add(moment(item.date, "DD.MM.YYYY").month() + 1);
     });
     const sortedMonths = sortMonths(months);
+
     setCities(cities);
     setMonths(sortedMonths);
   }, [data]);
