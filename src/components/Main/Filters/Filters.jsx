@@ -37,27 +37,31 @@ export const Filters = ({
 
   return (
     <div className="filters">
-      <label htmlFor="cityFilter">City:</label>
-      <select
-        id="cityFilter"
-        className="filter"
-        value={chosenCity}
-        onChange={(e) => setChosenCity(e.target.value)}
-      >
-        {renderOptions(cities)}
-      </select>
+      <div class="filterWrapper">
+        <label htmlFor="cityFilter">City:</label>
+        <select
+          id="cityFilter"
+          className="filter"
+          value={chosenCity}
+          onChange={(e) => setChosenCity(e.target.value)}
+        >
+          {renderOptions(cities)}
+        </select>
+      </div>
 
-      <label htmlFor="monthFilter">Month:</label>
-      <select
-        id="monthFilter"
-        className="filter"
-        value={chosenMonth}
-        onChange={(e) => setChosenMonth(e.target.value)}
-      >
-        {renderOptions(months)}
-      </select>
+      <div class="filterWrapper">
+        <label htmlFor="monthFilter">Month:</label>
+        <select
+          id="monthFilter"
+          className="filter"
+          value={chosenMonth}
+          onChange={(e) => setChosenMonth(e.target.value)}
+        >
+          {renderOptions(months)}
+        </select>
+      </div>
 
-      <span id="wrapper">
+      <div class="filterWrapper">
         <label htmlFor="favoriteFilter">Only favorites:</label>
         <input
           type="checkbox"
@@ -68,7 +72,7 @@ export const Filters = ({
             setIsOnlyFavorites(value);
           }}
         />
-      </span>
+      </div>
     </div>
   );
 };
