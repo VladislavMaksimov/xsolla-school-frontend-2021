@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3e944043.chunk.css",
+    "main.js": "/static/js/main.a0c272a0.chunk.js",
+    "main.js.map": "/static/js/main.a0c272a0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2cb76fb8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2cb76fb8.js.map",
+    "static/js/2.33d416c5.chunk.js": "/static/js/2.33d416c5.chunk.js",
+    "static/js/2.33d416c5.chunk.js.map": "/static/js/2.33d416c5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3e944043.chunk.css.map": "/static/css/main.3e944043.chunk.css.map",
+    "static/js/2.33d416c5.chunk.js.LICENSE.txt": "/static/js/2.33d416c5.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/AvenirLTStd-Book.813557df.otf",
+    "static/media/Filters.css": "/static/media/filter.a7d0902f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2cb76fb8.js",
+    "static/js/2.33d416c5.chunk.js",
+    "static/css/main.3e944043.chunk.css",
+    "static/js/main.a0c272a0.chunk.js"
+  ]
+}
